@@ -1,0 +1,179 @@
+{
+  "Tests": [
+    {
+      "Convey": "auto-generated test for visual_urlCreate",
+      "Zome": "visual_metadata",
+      "FnName": "visual_urlCreate",
+      "Input": {
+        "visual_url": "string"
+      },
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for visual_urlRead",
+      "Zome": "visual_metadata",
+      "FnName": "visual_urlRead",
+      "Input": "%h%",
+      "Output": {
+        "visual_url": "string"
+      }
+    },
+    {
+      "Convey": "auto-generated test for visual_urlUpdate",
+      "Zome": "visual_metadata",
+      "FnName": "visual_urlUpdate",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for deviceCreate",
+      "Zome": "visual_metadata",
+      "FnName": "deviceCreate",
+      "Input": {
+        "device": "string"
+      },
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for deviceRead",
+      "Zome": "visual_metadata",
+      "FnName": "deviceRead",
+      "Input": "%h%",
+      "Output": {
+        "device": "string"
+      }
+    },
+    {
+      "Convey": "auto-generated test for deviceUpdate",
+      "Zome": "visual_metadata",
+      "FnName": "deviceUpdate",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for startdatetimeCreate",
+      "Zome": "visual_metadata",
+      "FnName": "startdatetimeCreate",
+      "Input": {
+        "device": "string"
+      },
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for startdatetimeRead",
+      "Zome": "visual_metadata",
+      "FnName": "startdatetimeRead",
+      "Input": "%h%",
+      "Output": {
+        "device": "string"
+      }
+    },
+    {
+      "Convey": "auto-generated test for startdatetimeUpdate",
+      "Zome": "visual_metadata",
+      "FnName": "startdatetimeUpdate",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for collaboratorCreate",
+      "Zome": "visual_metadata",
+      "FnName": "collaboratorCreate",
+      "Input": {
+        "collaborator": "string"
+      },
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for collaboratorRead",
+      "Zome": "visual_metadata",
+      "FnName": "collaboratorRead",
+      "Input": "%h%",
+      "Output": {
+        "collaborator": "string"
+      }
+    },
+    {
+      "Convey": "auto-generated test for collaboratorUpdate",
+      "Zome": "visual_metadata",
+      "FnName": "collaboratorUpdate",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for locationCreate",
+      "Zome": "visual_metadata",
+      "FnName": "locationCreate",
+      "Input": {
+        "location": "string"
+      },
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for locationRead",
+      "Zome": "visual_metadata",
+      "FnName": "locationRead",
+      "Input": "%h%",
+      "Output": {
+        "location": "string"
+      }
+    },
+    {
+      "Convey": "auto-generated test for locationUpdate",
+      "Zome": "visual_metadata",
+      "FnName": "locationUpdate",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for endingtimeCreate",
+      "Zome": "visual_metadata",
+      "FnName": "endingtimeCreate",
+      "Input": {
+        "endingtime": "string"
+      },
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for endingtimeRead",
+      "Zome": "visual_metadata",
+      "FnName": "endingtimeRead",
+      "Input": "%h%",
+      "Output": {
+        "endingtime": "string"
+      }
+    },
+    {
+      "Convey": "auto-generated test for endingtimeUpdate",
+      "Zome": "visual_metadata",
+      "FnName": "endingtimeUpdate",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for totaldurationCreate",
+      "Zome": "visual_metadata",
+      "FnName": "totaldurationCreate",
+      "Input": {
+        "totalduration": "string"
+      },
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for totaldurationRead",
+      "Zome": "visual_metadata",
+      "FnName": "totaldurationRead",
+      "Input": "%h%",
+      "Output": {
+        "totalduration": "string"
+      }
+    },
+    {
+      "Convey": "auto-generated test for totaldurationUpdate",
+      "Zome": "visual_metadata",
+      "FnName": "totaldurationUpdate",
+      "Input": "%h%",
+      "Output": "%h%"
+    }
+  ]
+}

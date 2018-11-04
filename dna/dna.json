@@ -1,0 +1,179 @@
+{
+  "Version": 1,
+  "UUID": "788c75fc-9ca1-4bc8-b05d-72cdf27b2bc3",
+  "Name": "timelapse",
+  "Properties": {
+    "description": "time lapse data from visual input",
+    "language": "en"
+  },
+  "PropertiesSchemaFile": "properties_schema.json",
+  "DHTConfig": {
+    "HashType": "sha2-256"
+  },
+  "Zomes": [
+    {
+      "Name": "visual_metadata",
+      "Description": "date from the front row device",
+      "RibosomeType": "js",
+      "CodeFile": "visual_metadata.js",
+      "Entries": [
+        {
+          "Name": "visual_url",
+          "Required": true,
+          "DataFormat": "json",
+          "Sharing": "public",
+          "SchemaFile": "visual_url.json"
+        },
+        {
+          "Name": "device",
+          "Required": true,
+          "DataFormat": "json",
+          "Sharing": "public",
+          "SchemaFile": "device.json"
+        },
+        {
+          "Name": "startdatetime",
+          "Required": true,
+          "DataFormat": "json",
+          "Sharing": "public",
+          "SchemaFile": "startdatetime.json"
+        },
+        {
+          "Name": "collaborator",
+          "Required": true,
+          "DataFormat": "json",
+          "Sharing": "public",
+          "SchemaFile": "collaborator.json"
+        },
+        {
+          "Name": "location",
+          "Required": true,
+          "DataFormat": "json",
+          "Sharing": "public",
+          "SchemaFile": "location.json"
+        },
+        {
+          "Name": "endingtime",
+          "Required": true,
+          "DataFormat": "json",
+          "Sharing": "public",
+          "SchemaFile": "endingtime.json"
+        },
+        {
+          "Name": "totalduration",
+          "Required": true,
+          "DataFormat": "json",
+          "Sharing": "public",
+          "SchemaFile": "totalduration.json"
+        }
+      ],
+      "Functions": [
+        {
+          "Name": "visual_urlCreate",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "visual_urlRead",
+          "CallingType": "string",
+          "Exposure": "public"
+        },
+        {
+          "Name": "visual_urlUpdate",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "deviceCreate",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "deviceRead",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "deviceUpdate",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "startdatetimeCreate",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "startdatetimeRead",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "startdatetimeUpdate",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "collaboratorCreate",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "collaboratorRead",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "collaboratorUpdate",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "locationCreate",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "locationRead",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "locationUpdate",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "endingtimeCreate",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "endingtimeRead",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "endingtimeUpdate",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "totaldurationCreate",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "totaldurationRead",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "totaldurationUpdate",
+          "CallingType": "json",
+          "Exposure": "public"
+        }
+      ]
+    }
+  ]
+}

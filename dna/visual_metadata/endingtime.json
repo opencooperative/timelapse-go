@@ -1,0 +1,22 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "endingtime"
+  ],
+  "properties": {
+    "endingtime": {
+      "$id": "#/properties/endingtime",
+      "type": "string",
+      "title": "The Endingtime Schema",
+      "default": "",
+      "examples": [
+        "string"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

@@ -1,0 +1,772 @@
+{
+  # This is a holochain scaffold yaml definition. http://ceptr.org/projects/holochain
+
+  # DNA File Version
+  # Version indicator for changes to DNA
+  "Version": "0.0.1",
+  "Generator": "hc-scaffold:0.1.0+e8a394b",
+
+  # Application DNA
+  # The DNA specifies the entry structure and functions and configuration of your application
+  "DNA": {
+
+    # DNA File Version
+    # Version indicator for changes to DNA
+    "Version": 1,
+
+    # DNA Unique ID
+    # This ID differentiates your app from others. For example, to tell one Slack team from another which same code.
+    "UUID": "788c75fc-9ca1-4bc8-b05d-72cdf27b2bc3",
+
+    # Application Name
+    # What would you like to call your holochain app?
+    "Name": "timelapse",
+
+    # Properties
+    # Properties that you want available across all Zomes.
+    "Properties": {
+
+      # Application Description
+      # Briefly describe your holochain app.
+      "description": "time lapse data from visual input",
+
+      # Language
+      # The base (human) language of this holochain app.
+      "language": "en"
+    },
+
+    # Properties Schema File
+    # Describes the entries in the Properties section of your dna file.
+    "PropertiesSchemaFile": "properties_schema.json",
+
+    # DHT Settings
+    # Configure the properties of your Distributed Hash Table (e.g. hash algorithm, neighborhood size, etc.).
+    "DHTConfig": {
+      "HashType": "sha2-256"
+    },
+
+    # Zomes
+    # List the Zomes your application will support.
+    "Zomes": [
+      {
+
+        # Zome Name
+        # The name of this code module.
+        "Name": "visual_metadata",
+
+        # Zome Description
+        # What is the purpose of this module?
+        "Description": "date from the front row device",
+
+        # Ribosome Type
+        # What scripting language will you code in?
+        "RibosomeType": "js",
+
+        # Code File
+        # Points to the main script file for this Zome.
+        "CodeFile": "visual_metadata.js",
+
+        # Zome Entries
+        # Data stored and tracked by your Zome.
+        "Entries": [
+          {
+            "Name": "visual_url", # The name of this entry.
+            "Required": true, # Is this entry required?
+            "DataFormat": "json", # What type of data should this entry store?
+            "Sharing": "public", # Should this entry be publicly accessible?
+            "Schema": "{\n  \"definitions\": {},\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"$id\": \"http://example.com/root.json\",\n  \"type\": \"object\",\n  \"title\": \"The Root Schema\",\n  \"required\": [\n    \"visual_url\"\n  ],\n  \"properties\": {\n    \"visual_url\": {\n      \"$id\": \"#/properties/visual_url\",\n      \"type\": \"string\",\n      \"title\": \"The Visual_url Schema\",\n      \"default\": \"\",\n      \"examples\": [\n        \"string\"\n      ],\n      \"pattern\": \"^(.*)$\"\n    }\n  }\n}",
+            "_": "cru"
+          },
+          {
+            "Name": "device", # The name of this entry.
+            "Required": true, # Is this entry required?
+            "DataFormat": "json", # What type of data should this entry store?
+            "Sharing": "public", # Should this entry be publicly accessible?
+            "Schema": "{\n  \"definitions\": {},\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"$id\": \"http://example.com/root.json\",\n  \"type\": \"object\",\n  \"title\": \"The Root Schema\",\n  \"required\": [\n    \"device\"\n  ],\n  \"properties\": {\n    \"device\": {\n      \"$id\": \"#/properties/device\",\n      \"type\": \"string\",\n      \"title\": \"The Device Schema\",\n      \"default\": \"\",\n      \"examples\": [\n        \"string\"\n      ],\n      \"pattern\": \"^(.*)$\"\n    }\n  }\n}",
+            "_": "cru"
+          },
+          {
+            "Name": "startdatetime", # The name of this entry.
+            "Required": true, # Is this entry required?
+            "DataFormat": "json", # What type of data should this entry store?
+            "Sharing": "public", # Should this entry be publicly accessible?
+            "Schema": "{\n  \"definitions\": {},\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"$id\": \"http://example.com/root.json\",\n  \"type\": \"object\",\n  \"title\": \"The Root Schema\",\n  \"required\": [\n    \"device\"\n  ],\n  \"properties\": {\n    \"device\": {\n      \"$id\": \"#/properties/device\",\n      \"type\": \"string\",\n      \"title\": \"The Device Schema\",\n      \"default\": \"\",\n      \"examples\": [\n        \"string\"\n      ],\n      \"pattern\": \"^(.*)$\"\n    }\n  }\n}",
+            "_": "cru"
+          },
+          {
+            "Name": "collaborator", # The name of this entry.
+            "Required": true, # Is this entry required?
+            "DataFormat": "json", # What type of data should this entry store?
+            "Sharing": "public", # Should this entry be publicly accessible?
+            "Schema": "{\n  \"definitions\": {},\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"$id\": \"http://example.com/root.json\",\n  \"type\": \"object\",\n  \"title\": \"The Root Schema\",\n  \"required\": [\n    \"collaborator\"\n  ],\n  \"properties\": {\n    \"collaborator\": {\n      \"$id\": \"#/properties/collaborator\",\n      \"type\": \"string\",\n      \"title\": \"The Collaborator Schema\",\n      \"default\": \"\",\n      \"examples\": [\n        \"string\"\n      ],\n      \"pattern\": \"^(.*)$\"\n    }\n  }\n}",
+            "_": "cru"
+          },
+          {
+            "Name": "location", # The name of this entry.
+            "Required": true, # Is this entry required?
+            "DataFormat": "json", # What type of data should this entry store?
+            "Sharing": "public", # Should this entry be publicly accessible?
+            "Schema": "{\n  \"definitions\": {},\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"$id\": \"http://example.com/root.json\",\n  \"type\": \"object\",\n  \"title\": \"The Root Schema\",\n  \"required\": [\n    \"location\"\n  ],\n  \"properties\": {\n    \"location\": {\n      \"$id\": \"#/properties/location\",\n      \"type\": \"string\",\n      \"title\": \"The Location Schema\",\n      \"default\": \"\",\n      \"examples\": [\n        \"string\"\n      ],\n      \"pattern\": \"^(.*)$\"\n    }\n  }\n}",
+            "_": "cru"
+          },
+          {
+            "Name": "endingtime", # The name of this entry.
+            "Required": true, # Is this entry required?
+            "DataFormat": "json", # What type of data should this entry store?
+            "Sharing": "public", # Should this entry be publicly accessible?
+            "Schema": "{\n  \"definitions\": {},\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"$id\": \"http://example.com/root.json\",\n  \"type\": \"object\",\n  \"title\": \"The Root Schema\",\n  \"required\": [\n    \"endingtime\"\n  ],\n  \"properties\": {\n    \"endingtime\": {\n      \"$id\": \"#/properties/endingtime\",\n      \"type\": \"string\",\n      \"title\": \"The Endingtime Schema\",\n      \"default\": \"\",\n      \"examples\": [\n        \"string\"\n      ],\n      \"pattern\": \"^(.*)$\"\n    }\n  }\n}",
+            "_": "cru"
+          },
+          {
+            "Name": "totalduration", # The name of this entry.
+            "Required": true, # Is this entry required?
+            "DataFormat": "json", # What type of data should this entry store?
+            "Sharing": "public", # Should this entry be publicly accessible?
+            "Schema": "{\n  \"definitions\": {},\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"$id\": \"http://example.com/root.json\",\n  \"type\": \"object\",\n  \"title\": \"The Root Schema\",\n  \"required\": [\n    \"totalduration\"\n  ],\n  \"properties\": {\n    \"totalduration\": {\n      \"$id\": \"#/properties/totalduration\",\n      \"type\": \"string\",\n      \"title\": \"The Totalduration Schema\",\n      \"default\": \"\",\n      \"examples\": [\n        \"string\"\n      ],\n      \"pattern\": \"^(.*)$\"\n    }\n  }\n}",
+            "_": "cru"
+          }
+        ],
+
+        # Zome Functions
+        # Functions which can be called in your Zome's API.
+        "Functions": [
+          {
+            "Name": "visual_urlCreate", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "c:visual_url"
+          },
+          {
+            "Name": "visual_urlRead", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "r:visual_url"
+          },
+          {
+            "Name": "visual_urlUpdate", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "u:visual_url"
+          },
+          {
+            "Name": "deviceCreate", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "c:device"
+          },
+          {
+            "Name": "deviceRead", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "r:device"
+          },
+          {
+            "Name": "deviceUpdate", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "u:device"
+          },
+          {
+            "Name": "startdatetimeCreate", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "c:startdatetime"
+          },
+          {
+            "Name": "startdatetimeRead", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "r:startdatetime"
+          },
+          {
+            "Name": "startdatetimeUpdate", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "u:startdatetime"
+          },
+          {
+            "Name": "collaboratorCreate", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "c:collaborator"
+          },
+          {
+            "Name": "collaboratorRead", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "r:collaborator"
+          },
+          {
+            "Name": "collaboratorUpdate", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "u:collaborator"
+          },
+          {
+            "Name": "locationCreate", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "c:location"
+          },
+          {
+            "Name": "locationRead", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "r:location"
+          },
+          {
+            "Name": "locationUpdate", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "u:location"
+          },
+          {
+            "Name": "endingtimeCreate", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "c:endingtime"
+          },
+          {
+            "Name": "endingtimeRead", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "r:endingtime"
+          },
+          {
+            "Name": "endingtimeUpdate", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "u:endingtime"
+          },
+          {
+            "Name": "totaldurationCreate", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "c:totalduration"
+          },
+          {
+            "Name": "totaldurationRead", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "r:totalduration"
+          },
+          {
+            "Name": "totaldurationUpdate", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "u:totalduration"
+          }
+        ],
+
+        # Zome Source Code
+        # The logic that will control Zome behavior
+        "Code": "'use strict';\n\n// -----------------------------------------------------------------\n//  This stub Zome code file was auto-generated by hc-scaffold\n// -----------------------------------------------------------------\n\n// -----------------------------------------------------------------\n//  Exposed functions with custom logic https://developer.holochain.org/API_reference\n// -----------------------------------------------------------------\n\nfunction visual_urlCreate (visual_urlEntry) {\n  var visual_urlHash = commit(\"visual_url\", visual_urlEntry);\n  return visual_urlHash;\n}\n\nfunction visual_urlRead (visual_urlHash) {\n  var visual_url = get(visual_urlHash);\n  return visual_url;\n}\n\nfunction visual_urlUpdate (visual_urlHash) {\n  var sampleValue={\"visual_url\":\"string\",\"extraField\":true};\n  var visual_urlOutHash = update(\"visual_url\", sampleValue, visual_urlHash);\n  return visual_urlOutHash;\n}\n\nfunction deviceCreate (deviceEntry) {\n  var deviceHash = commit(\"device\", deviceEntry);\n  return deviceHash;\n}\n\nfunction deviceRead (deviceHash) {\n  var device = get(deviceHash);\n  return device;\n}\n\nfunction deviceUpdate (deviceHash) {\n  var sampleValue={\"device\":\"string\",\"extraField\":true};\n  var deviceOutHash = update(\"device\", sampleValue, deviceHash);\n  return deviceOutHash;\n}\n\nfunction startdatetimeCreate (startdatetimeEntry) {\n  var startdatetimeHash = commit(\"startdatetime\", startdatetimeEntry);\n  return startdatetimeHash;\n}\n\nfunction startdatetimeRead (startdatetimeHash) {\n  var startdatetime = get(startdatetimeHash);\n  return startdatetime;\n}\n\nfunction startdatetimeUpdate (startdatetimeHash) {\n  var sampleValue={\"device\":\"string\",\"extraField\":true};\n  var startdatetimeOutHash = update(\"startdatetime\", sampleValue, startdatetimeHash);\n  return startdatetimeOutHash;\n}\n\nfunction collaboratorCreate (collaboratorEntry) {\n  var collaboratorHash = commit(\"collaborator\", collaboratorEntry);\n  return collaboratorHash;\n}\n\nfunction collaboratorRead (collaboratorHash) {\n  var collaborator = get(collaboratorHash);\n  return collaborator;\n}\n\nfunction collaboratorUpdate (collaboratorHash) {\n  var sampleValue={\"collaborator\":\"string\",\"extraField\":true};\n  var collaboratorOutHash = update(\"collaborator\", sampleValue, collaboratorHash);\n  return collaboratorOutHash;\n}\n\nfunction locationCreate (locationEntry) {\n  var locationHash = commit(\"location\", locationEntry);\n  return locationHash;\n}\n\nfunction locationRead (locationHash) {\n  var location = get(locationHash);\n  return location;\n}\n\nfunction locationUpdate (locationHash) {\n  var sampleValue={\"location\":\"string\",\"extraField\":true};\n  var locationOutHash = update(\"location\", sampleValue, locationHash);\n  return locationOutHash;\n}\n\nfunction endingtimeCreate (endingtimeEntry) {\n  var endingtimeHash = commit(\"endingtime\", endingtimeEntry);\n  return endingtimeHash;\n}\n\nfunction endingtimeRead (endingtimeHash) {\n  var endingtime = get(endingtimeHash);\n  return endingtime;\n}\n\nfunction endingtimeUpdate (endingtimeHash) {\n  var sampleValue={\"endingtime\":\"string\",\"extraField\":true};\n  var endingtimeOutHash = update(\"endingtime\", sampleValue, endingtimeHash);\n  return endingtimeOutHash;\n}\n\nfunction totaldurationCreate (totaldurationEntry) {\n  var totaldurationHash = commit(\"totalduration\", totaldurationEntry);\n  return totaldurationHash;\n}\n\nfunction totaldurationRead (totaldurationHash) {\n  var totalduration = get(totaldurationHash);\n  return totalduration;\n}\n\nfunction totaldurationUpdate (totaldurationHash) {\n  var sampleValue={\"totalduration\":\"string\",\"extraField\":true};\n  var totaldurationOutHash = update(\"totalduration\", sampleValue, totaldurationHash);\n  return totaldurationOutHash;\n}\n\n\n// -----------------------------------------------------------------\n//  The Genesis Function https://developer.holochain.org/genesis\n// -----------------------------------------------------------------\n\n/**\n * Called only when your source chain is generated\n * @return {boolean} success\n */\nfunction genesis () {\n  return true;\n}\n\n// -----------------------------------------------------------------\n//  Validation functions for every change to the local chain or DHT\n// -----------------------------------------------------------------\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {*} entry - the entry data to be set\n * @param {object} header - header for the entry containing properties EntryLink, Time, and Type\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validateCommit (entryName, entry, header, pkg, sources) {\n  switch (entryName) {\n    case \"visual_url\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"device\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"startdatetime\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"collaborator\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"location\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"endingtime\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"totalduration\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {*} entry - the entry data to be set\n * @param {object} header - header for the entry containing properties EntryLink, Time, and Type\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validatePut (entryName, entry, header, pkg, sources) {\n  switch (entryName) {\n    case \"visual_url\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"device\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"startdatetime\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"collaborator\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"location\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"endingtime\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"totalduration\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {*} entry - the entry data to be set\n * @param {object} header - header for the entry containing properties EntryLink, Time, and Type\n * @param {string} replaces - the hash for the entry being updated\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validateMod (entryName, entry, header, replaces, pkg, sources) {\n  switch (entryName) {\n    case \"visual_url\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"device\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"startdatetime\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"collaborator\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"location\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"endingtime\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"totalduration\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {string} hash - the hash of the entry to remove\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validateDel (entryName, hash, pkg, sources) {\n  switch (entryName) {\n    case \"visual_url\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"device\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"startdatetime\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"collaborator\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"location\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"endingtime\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"totalduration\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {string} baseHash - the hash of the base entry being linked\n * @param {?} links - ?\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validateLink (entryName, baseHash, links, pkg, sources) {\n  switch (entryName) {\n    case \"visual_url\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"device\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"startdatetime\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"collaborator\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"location\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"endingtime\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"totalduration\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to get the data needed to validate\n * @param {string} entryName - the name of entry to validate\n * @return {*} the data required for validation\n */\nfunction validatePutPkg (entryName) {\n  return null;\n}\n\n/**\n * Called to get the data needed to validate\n * @param {string} entryName - the name of entry to validate\n * @return {*} the data required for validation\n */\nfunction validateModPkg (entryName) {\n  return null;\n}\n\n/**\n * Called to get the data needed to validate\n * @param {string} entryName - the name of entry to validate\n * @return {*} the data required for validation\n */\nfunction validateDelPkg (entryName) {\n  return null;\n}\n\n/**\n * Called to get the data needed to validate\n * @param {string} entryName - the name of entry to validate\n * @return {*} the data required for validation\n */\nfunction validateLinkPkg (entryName) {\n  return null;\n}"
+      }
+    ]
+  },
+
+  # TestSets
+  # Auto-Generated test sets for hcdev package
+  "TestSets": [
+    {
+
+      # Name
+      # Name of the Test Set
+      "Name": "visual_metadata",
+      "TestSet": {
+        "Tests": [
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for visual_urlCreate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "visual_urlCreate",
+
+            # Input
+            # Input sent to the function
+            "Input": {
+              "visual_url": "string"
+            },
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for visual_urlRead",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "visual_urlRead",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": {
+              "visual_url": "string"
+            }
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for visual_urlUpdate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "visual_urlUpdate",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for deviceCreate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "deviceCreate",
+
+            # Input
+            # Input sent to the function
+            "Input": {
+              "device": "string"
+            },
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for deviceRead",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "deviceRead",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": {
+              "device": "string"
+            }
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for deviceUpdate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "deviceUpdate",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for startdatetimeCreate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "startdatetimeCreate",
+
+            # Input
+            # Input sent to the function
+            "Input": {
+              "device": "string"
+            },
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for startdatetimeRead",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "startdatetimeRead",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": {
+              "device": "string"
+            }
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for startdatetimeUpdate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "startdatetimeUpdate",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for collaboratorCreate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "collaboratorCreate",
+
+            # Input
+            # Input sent to the function
+            "Input": {
+              "collaborator": "string"
+            },
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for collaboratorRead",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "collaboratorRead",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": {
+              "collaborator": "string"
+            }
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for collaboratorUpdate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "collaboratorUpdate",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for locationCreate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "locationCreate",
+
+            # Input
+            # Input sent to the function
+            "Input": {
+              "location": "string"
+            },
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for locationRead",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "locationRead",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": {
+              "location": "string"
+            }
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for locationUpdate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "locationUpdate",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for endingtimeCreate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "endingtimeCreate",
+
+            # Input
+            # Input sent to the function
+            "Input": {
+              "endingtime": "string"
+            },
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for endingtimeRead",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "endingtimeRead",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": {
+              "endingtime": "string"
+            }
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for endingtimeUpdate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "endingtimeUpdate",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for totaldurationCreate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "totaldurationCreate",
+
+            # Input
+            # Input sent to the function
+            "Input": {
+              "totalduration": "string"
+            },
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for totaldurationRead",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "totaldurationRead",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": {
+              "totalduration": "string"
+            }
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for totaldurationUpdate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "visual_metadata",
+
+            # Function Name
+            # The function to test
+            "FnName": "totaldurationUpdate",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          }
+        ]
+      }
+    }
+  ]
+}
